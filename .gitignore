@@ -1,0 +1,25 @@
+# Entornos virtuales
+venv/
+__pycache__/
+*.pyc
+
+# Variables de entorno y secretos
+.env
+config.py
+
+
+# Base de datos local
+*.sqlite
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Cobertura de tests
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Backups de base de datos
+*.sql
