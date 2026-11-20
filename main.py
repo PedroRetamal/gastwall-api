@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware #importar cors para aceptar peticiones de otros dominios
+from routers import usuarios
 
 app = FastAPI(
     title="Gastwall API",
@@ -15,6 +16,8 @@ app.add_middleware(
     allow_methods=["*"],  #permitir cualquier metodo, como post, get, patch, put, delete
     allow_headers=["*"]   #permitir cualquier header
 )
+
+app.include_router(usuarios.router, prefix="/usuarios", tags=["usuarios"])
 
 @app.get("/")
 def root():
